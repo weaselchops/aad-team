@@ -31,11 +31,11 @@ spec:
       labels:
         name: arcadebackend        
     spec:
-      # imagePullSecrets:
-      #   - name: teamregistry
+      imagePullSecrets:
+        - name: pull-secret
       containers:
       - name: arcadebackend
-        image: ghcr.io/azure-adventure-day/azure-adventure-day-coach/gamebot:latest
+        image: ghcr.io/azure-adventure-day/azure-adventure-day-coach/gamebot:build1
         imagePullPolicy: Always
         ports:
           - containerPort: 8080
