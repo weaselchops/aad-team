@@ -35,7 +35,7 @@ spec:
           - name: pull-secret
       containers:
       - name: arcadebackend
-        image: ghcr.io/azure-adventure-day/azure-adventure-day-coach/gamebot:build1
+        image: not4uacrc663ad.azurecr.io/gamebot:build1
         imagePullPolicy: Always
         ports:
           - containerPort: 8080
