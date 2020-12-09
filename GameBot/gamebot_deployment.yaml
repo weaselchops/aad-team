@@ -22,7 +22,7 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      name: arcadebackend      
+      name: arcadebackend 
   minReadySeconds: 5
   strategy:
     type: RollingUpdate 
@@ -48,3 +48,12 @@ spec:
             value: "RANDOM"
           - name: "FF_BETS"
             value: "true"
+        livenessProbe:
+          httpGet:
+          path: /health
+          port: 8080
+          httpHeaders:
+          - name: Custom-Header
+            value: Awesome
+          initialDelaySeconds: 3
+          periodSeconds: 3
