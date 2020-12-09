@@ -19,7 +19,7 @@ kind: Deployment
 metadata:
   name: arcadebackend
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       name: arcadebackend      
@@ -45,4 +45,4 @@ spec:
           - name: "PORT"
             value: "8080"
           - name: "PICK_STRATEGY"
-            value: "RANDOM"
+            value: "ROCK"
