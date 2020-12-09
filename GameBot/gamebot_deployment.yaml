@@ -25,7 +25,7 @@ spec:
       name: arcadebackend      
   minReadySeconds: 5
   strategy:
-    type: Recreate
+    type: RollingUpdate 
   template:
     metadata:
       labels:
