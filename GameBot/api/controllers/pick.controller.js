@@ -11,7 +11,18 @@ const pick = async (req, res) => {
     }
 
     // implement arcade intelligence here
-    const strategyOption = process.env.PICK_STRATEGY || "RANDOM";
+
+    strategyOption = "RANDOM";
+    if (req.body.Turn == 0) {
+        if (Player1Name == 'Kye') { 
+            if (req.body.TurnsPlayer1Values[0]=="PAPER") {
+                strategyOption = "Paper";
+            } else if (req.body.TurnsPlayer1Values[0]=="METAL") {
+                strategyOption = "ROCK";
+            }
+        } 
+    } 
+
     const result = pickFromStrategy(strategyOption);
     console.log('Against '+Player1Name+', strategy ' + strategyOption + '  played ' + result.text);
     
