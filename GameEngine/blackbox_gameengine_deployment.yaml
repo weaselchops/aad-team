@@ -66,7 +66,3 @@ spec:
             value: "Server=tcp:game-sqlserver-c663ad.database.windows.net,1433;Initial Catalog=gamedb;Persist Security Info=False;User ID=gamedbadministrator;Password=Vv#PDlK{​​​​​@O?$0@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
           - name: "ARCADE_BACKENDURL"
             value: "http://arcadebackend/pick"
-      volumes:
-      - name: config-volume
-        hostPath:
-          path: /etc/kubernetes/
