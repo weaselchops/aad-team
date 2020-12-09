@@ -32,7 +32,7 @@ spec:
         name: arcadebackend        
     spec:
       imagePullSecrets:
-        - name: pull-secret
+          - name: pull-secret
       containers:
       - name: arcadebackend
         image: ghcr.io/azure-adventure-day/azure-adventure-day-coach/gamebot:build1
@@ -50,8 +50,8 @@ spec:
             value: "true"
         livenessProbe:
           httpGet:
-          path: /health
-          port: 8080
+            path: /health
+            port: 8080
           httpHeaders:
           - name: Custom-Header
             value: Awesome
