@@ -63,22 +63,9 @@ spec:
             protocol: TCP
         env: 
           - name: "ConnectionStrings__GameEngineDB"
-            value: "Server=tcp:game-sqlserver.windows.net,1433;Initial Catalog=gamedb;Persist Security Info=False;User ID=gamedbadministrator;Password=herebepassword;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+            value: "Server=tcp:game-sqlserver-c663ad.database.windows.net,1433;Initial Catalog=gamedb;Persist Security Info=False;User ID=gamedbadministrator;Password=Vv#PDlK{​​​​​@O?$0@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
           - name: "ARCADE_BACKENDURL"
             value: "http://arcadebackend/pick"
-      - name: istio-proxy
-        image: ghcr.io/azure-adventure-day/azure-adventure-day-coach/gamedayengine-sidecar:latest
-        imagePullPolicy: Always
-        volumeMounts:
-        - mountPath: /meshconfig
-          name: config-volume
-        ports:
-          - containerPort: 81
-            name: servicemesh         
-            protocol: TCP
-        env: 
-          - name: "ASPNETCORE_URLS"
-            value: "http://aracadebackend:81"
       volumes:
       - name: config-volume
         hostPath:
