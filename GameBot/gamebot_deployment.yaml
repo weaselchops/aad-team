@@ -45,4 +45,6 @@ spec:
           - name: "PORT"
             value: "8080"
           - name: "PICK_STRATEGY"
-            value: "ROCK"
+            value: "RANDOM"
+          - name: "FF_BETS"
+            value: "true"
